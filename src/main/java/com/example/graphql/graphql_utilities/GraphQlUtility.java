@@ -44,10 +44,10 @@ public class GraphQlUtility {
 
     private RuntimeWiring buildRuntimeWiring() {
         return RuntimeWiring.newRuntimeWiring()
-                .type("Query", typeWriting -> typeWriting
+                .type("Query", typeWiring -> typeWiring
                     .dataFetcher("users", allUsersDataFetcher)
                     .dataFetcher("user", userDataFetcher))
-                .type("User", typeWriting -> typeWriting
+                .type("User", typeWiring -> typeWiring
                     .dataFetcher("articles", articlesDataFetcher)
                     .dataFetcher("friends", allUsersDataFetcher))
                 .build();
